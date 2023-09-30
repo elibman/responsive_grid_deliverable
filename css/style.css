@@ -135,23 +135,92 @@ nav li:hover{
 
 /* Step 4: Write selector/rule property to style the container */
 
-@media screen and (max-width:320px){
+@media screen and (min-width:320px){
   .container{
     display: grid;
     grid-template-columns: 1fr 5fr 1fr;
     gap: 15px;
   }
-  .container:first-child{
+  .container > :first-child{
     grid-column: 1/-1;
     min-height: 500px;
-    background-image: url('header.jpg');
+    /* background-color: blue; */
+    background-image: url('images/header.jpg');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .about{
+    grid-column: 2/span 1;
+    grid-row: 2;
+  }
+
+  .method{
+    grid-column: 2/span 1;
+    grid-row: 3;
+  }
+
+  .clients{
+    grid-column: 2/span 1;
+    grid-row: 4;
+  }
+
+  .contact{
+    grid-column: 2/span 1;
+    grid-row: 5;
+  }
+
+
+  .about-image {
+    grid-column: 1/-1;
+    max-height: 600px;
+    overflow: hidden;  
+    grid-row: 2; /* Begin on the 2nd row */
+  }
+
+  .method-image {
+    grid-column: 1/-1;
+    max-height: 600px;
+    overflow: hidden;  
+    grid-row: 3; /* Begin on the 3rd row */
+  }
+
+  .clients-image {
+    grid-column: 1/-1;
+    max-height: 600px;
+    overflow: hidden;
+    grid-row: 4; /* Begin on the 4th row */
+  }
+
+  .contact-image {
+    grid-column: 1/-1;
+    max-height: 600px;
+    overflow: hidden;
+    grid-row: 5; /* Begin on the 5th row */
+  }
+
+
+
+  .text-block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-height: 250px;
+    overflow: auto;
   }
 }
 
 /* Step 5: Write selector/rule property to add the background image to the 
 first div in the grid  and place it in the grid. */
 
+/* .grid > div{
+  grid-column: 1/-1;
+  min-height: 500px;
+  background-image: url('../images/header.jpg');
 
+} */
 
 /* Steps 6 and 7: Write the selector/rule properties to add place the next elements in the next
  four rows in the grid. */
@@ -166,7 +235,29 @@ first div in the grid  and place it in the grid. */
 
 
   /* Step 9: Write the selector/rule property to style the nav element */
-
+@media screen and (min-width: 800px){
+  .nav {
+    position: absolute;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  
+  .container {
+    display: grid;
+    grid-template-columns: 50px auto 500px auto 50px;
+    gap: 15px; 
+  }
+  
+  .about, .clients, .method-image, .contact-image {
+    grid-column: 3 / span 2; 
+  }
+  
+  .method, .contact, .about-image, .clients-image {
+    grid-column: 2 / span 2; 
+  }
+}
  
   /* Step 10: Write the selector/rule property to update the .container class */
 
